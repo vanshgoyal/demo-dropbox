@@ -1,0 +1,410 @@
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic Body Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    padding: 20px; /* Add some padding around the whole app */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+    padding: 30px;
+    max-width: 900px; /* Max width for larger screens */
+    width: 100%; /* Ensure it takes full width on smaller screens */
+    margin: 20px 0; /* Vertical margin */
+}
+
+.title {
+    font-size: 2.5em; /* Larger title */
+    color: #2c3e50; /* Darker title color */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700; /* Bold */
+}
+
+/* Message Box Styles */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Section Styling */
+.section {
+    background-color: #f9f9f9; /* Light background for sections */
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow */
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Upload Form Styles */
+.upload-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    gap: 15px; /* Space between elements */
+    align-items: center; /* Center items horizontally */
+}
+
+.file-input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%; /* Full width on small screens */
+}
+
+/* Button Styles */
+.button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space for spinner */
+    width: auto; /* Auto width */
+    min-width: 120px; /* Minimum width for consistency */
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.primary-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+.secondary-button {
+    background-color: #ecf0f1; /* Light gray */
+    color: #34495e; /* Dark text */
+    border: 1px solid #bdc3c7;
+}
+
+.secondary-button:hover {
+    background-color: #dbe4e6; /* Darker light gray */
+}
+
+/* Equal-width buttons for actions */
+.fixed-button {
+    width: 130px; /* Fixed equal width */
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+}
+
+/* Danger Button Style */
+.danger-button {
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+.danger-button:hover {
+    background-color: #c0392b; /* Darker red */
+}
+/* File List Table Styles */
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    min-width: 600px; /* Ensure table doesn't get too narrow */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #eef1f4; /* Header background */
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fcfcfc; /* Subtle stripe effect */
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5; /* Highlight on hover */
+}
+
+/* --- FIXED BUTTON ALIGNMENT --- */
+.actions-cell {
+    display: flex;
+    flex-direction: row; /* Ensure buttons are in a row */
+    gap: 10px; /* Space between action buttons */
+    flex-wrap: nowrap; /* Prevent wrapping onto new lines */
+    justify-content: flex-end; /* Align buttons to the right */
+    align-items: center; /* Vertically center buttons */
+}
+
+/* Messages for loading and no files */
+.loading-message, .no-files-message {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db; /* Match primary button color */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Login Page Styles */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 2em;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.login-actions {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.login-button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-1px);
+}
+
+.login-button.login {
+    background-color: #3498db;
+    color: white;
+}
+
+.login-button.login:hover {
+    background-color: #2980b9;
+}
+
+.login-button.signup {
+    background-color: #ecf0f1;
+    color: #34495e;
+    border: 1px solid #bdc3c7;
+}
+
+.login-button.signup:hover {
+    background-color: #dbe4e6;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login-card input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .upload-form {
+        flex-direction: column; /* Stack vertically */
+        align-items: stretch; /* Stretch to full width */
+    }
+
+    .button {
+        width: 100%; /* Full width buttons on small screens */
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    
+    /* FIX: Override the vertical stacking on mobile */
+    .actions-cell {
+        flex-direction: row; /* Force buttons to remain in a row on mobile */
+        gap: 5px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}

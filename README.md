@@ -3,7 +3,10 @@
 A **full-stack file management system** built using **React** (frontend) and **Spring Boot** (backend) that allows users to upload, view, download, and delete files with secure authentication and a responsive UI.
 
 
-[🎥 Watch Demo](screen-capture.webm)
+<video width="600" controls>
+  <source src="screen-capture.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
